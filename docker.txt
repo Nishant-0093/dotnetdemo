@@ -1,0 +1,14 @@
+FROM node
+WORKDIR /app
+COPY package.json /app
+RUN npm install
+COPY . /app
+CMD ["npm", "start"]
+
+
+
+
+
+docker build . -t node-docker-img  
+docker run -it -p 75:3000 nj19944/node-docker-img
+docker host-ip : 192.168.43.186:75
